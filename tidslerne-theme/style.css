@@ -1,0 +1,2144 @@
+/*
+Theme Name: Tidslerne Theme
+Author: Developer Team 
+Description: Custom theme for Tidslerne cancer support
+Version: 1.0
+*/
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }  
+  
+  body {
+    background-color: #FFFDF5;
+    font-family: 'Avenir', 'Inter', sans-serif;
+  }
+  
+  /*  Top Bar */
+  .top-bar {
+    background-color: #F5E9F2;
+    padding: 5px 25px;
+    font-size: 0.6rem;
+  }
+  .top-bar-inner {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+  .top-bar a {
+    color: #000;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Optional: 400 (regular), 500 (medium), 700 (bold) */
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    text-transform: lowercase; /* Optional: if you want all lowercase like Figma */
+  }
+  
+  
+  /*  Main header */
+  .main-header {
+        background-color: #FFFDF5;
+        padding: 10px 10px 10px 20px; 
+        border-bottom: 1px solid #eee;
+      
+  }
+  .main-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+
+  .logo img {
+    max-height: 70px;
+    flex: 0 0 auto;
+    padding-right: 40px;
+  }
+  .main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /*  aligns nav to left */
+  }
+
+  .main-nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .btn {
+    padding: 16px 16px;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .btn.gray {
+    background-color: #b6b3b6;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .btn.gray:hover {
+    background-color: #a2a2a2; 
+    transform: scale(1.03); 
+  }
+  .btn.magenta {
+    background-color: #ae1f64;
+    color: #fff;
+  }
+  .btn.green {
+    background-color:  #536c59;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .btn.green:hover {
+    background-color: #465c4b; 
+    transform: scale(1.03); 
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+  }
+  
+  
+ /* Lower nav bar */
+.lower-nav {
+    background-color: #f3e7f2;
+    padding: 15px 20px;
+  }
+  
+  .lower-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+  }
+  
+  .lower-menu li {
+    position: relative;
+    /* Removed display: flex here to fix dropdown positioning */
+  }
+  
+  .lower-menu a {
+    color: #ae1f64;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  .lower-menu a:hover {
+    text-decoration: none;
+    background-color: transparent;
+  }
+  
+  /* Arrow styling */
+  .arrow {
+    font-size: 0.6em;
+    margin-left: 6px;
+    color: #443f42;
+    position: relative;
+    top: -1px;
+  }
+  
+  /* Phone center layout fix */
+  .lower-menu .phone-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ae1f64;
+    line-height: 1.3;
+    font-weight: 500; /* Match other nav items */
+    font-size: 1.2rem;
+  }
+  
+  .lower-menu .phone-center strong {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 5px;
+    text-align: center;    
+    width: 100%;            
+    display: block;
+  }
+  
+  
+  /* Dropdown styles */
+  .lower-menu .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFFDF5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    min-width: 220px;
+    z-index: 10;
+  }
+  
+  .lower-menu .dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    color: #000;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  
+  .lower-menu .dropdown li a:hover {
+    background-color: #f3e7f2;
+  }
+  
+  .has-dropdown:hover .dropdown {
+    display: block;
+  }
+  .lower-menu .has-dropdown.right-align .dropdown {
+    left: auto;
+    right: 0;
+  }
+  
+  /* About section */ 
+  .about-section {
+    padding: 80px 0;
+    background-color: #b45c87;
+  }
+  
+  .about-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .about-image {
+    flex: 1 1 30%;
+    z-index: 1;
+  }
+  
+  .about-image img {
+    width: 80%;
+    height: auto;
+    margin-left: 200px;
+  }
+  
+  .about-text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f3e7f2;
+    padding: 40px;
+    max-width: 420px;
+    font-family: 'Inter', sans-serif;
+    color: #443f42;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  
+  .about-text h2 {
+    font-family:  'Avenir', sans-serif;
+    font-size: 1.8rem;
+    color: #ae1f64;
+    margin-bottom: 20px;
+  }
+  
+  .about-text .btn.magenta {
+    background-color: #ae1f64;
+    color: #fff;
+    padding: 12px 20px;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+  }
+  
+  @keyframes fadeInOnScroll {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .about-image {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+  }
+  
+  .about-image.animate {
+    animation: fadeInOnScroll 0.8s ease-out forwards;
+  }
+
+  /* Action cards */ 
+  .action-cards {
+    background-color: #fffdf5;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    gap: 10px; 
+  }
+  
+  .card span {
+    line-height: 1.4;
+    display: block;
+  }
+
+  .card i {
+    font-size: 2rem;
+    color: inherit;
+  }
+  
+  
+  /* Colors */
+  .card-light {
+    background-color: #e4dfe4;
+    color: #2b2b2b;
+  }
+  
+  .card-magenta {
+    background-color: #ae1f64;
+    color: #fff;
+  }
+  
+  .card-green {
+    background-color: #536c59;
+    color: #fff;
+  }
+  
+  /* Hover effect */
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+  /* Behandlinger */
+  .magazine-section {
+    padding: 80px 0;
+    
+  }
+  
+  .magazine-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .magazine-image {
+    flex: 1 1 30%;
+    z-index: 1;
+  }
+  
+  .magazine-image img {
+    width: 80%;
+    height: auto;
+    margin-left: 200px;
+  }
+  
+  .magazine-text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f3e7f2;
+    padding: 40px;
+    max-width: 420px;
+    font-family: 'Inter', sans-serif;
+    color: #443f42;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  
+  .magazine-text h2 {
+    font-family:  'Avenir', sans-serif;
+    font-size: 1.8rem;
+    color: #ae1f64;
+    margin-bottom: 20px;
+  }
+
+  .behandlinger-section {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .behandlinger-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .behandling-card {
+    background-color: #f3e7f2;
+    padding: 0; /* remove all padding */
+    overflow: hidden;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  
+  .behandling-card-content {
+    padding: 0 10px 20px 10px;
+    text-align: left;
+  }
+  
+  .behandling-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    padding-bottom: 20px;
+  }
+  
+  .behandling-card h3 {
+    color: #ae1f64;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  
+  .behandling-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    padding-bottom: 30px;
+  }
+  .behandling-card h3,
+.behandling-card p {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+  
+  .behandlinger-section .btn.magenta {
+    margin-top: 40px;
+  }
+  
+  .behandling-card {
+    transition: transform 0.3s ease;
+  }
+  
+  .behandling-card:hover {
+    transform: scale(1.03);  /* Slight grow effect */
+  }
+
+  /* Actor section */ 
+  .actor-section {
+    padding: 80px 0;
+    background-color: #536D59;
+  }
+  
+  .actor-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .actor-image {
+    flex: 1 1 30%;
+    z-index: 1;
+  }
+  
+  .actor-image img {
+    width: 80%;
+    height: auto;
+    margin-left: 200px;
+  }
+  
+  .actor-text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #E8F4E7;
+    padding: 40px;
+    max-width: 420px;
+    font-family: 'Inter', sans-serif;
+    color: #443f42;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  
+  .actor-text h2 {
+    font-family:  'Avenir', sans-serif;
+    font-size: 1.8rem;
+    color: #536D59;
+    margin-bottom: 20px;
+  }
+  @keyframes fadeInImage {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .actor-image {
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .actor-section.animate .actor-image {
+    animation: fadeInImage 0.8s ease-out forwards;
+  }
+  
+  /* Medlemsfordele */
+  .medlemsfordele-section {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .medlemsfordele-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .medlemsfordel-card {
+    background-color: #E8F4E7;
+    padding: 0; /* remove all padding */
+    overflow: hidden;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  
+  .medlemsfordel-card-content {
+    padding: 0 10px 20px 10px;
+    text-align: left;
+  }
+  
+  .medlemsfordel-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    padding-bottom: 20px;
+  }
+  
+  .medlemsfordel-card h3 {
+    color: #536D59;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  
+  .medlemsfordel-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    padding-bottom: 30px;
+  }
+  .medlemsfordel-card h3,
+.medlemsfordel-card p {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+  
+  .medlemsfordele-section .btn.magenta {
+    margin-top: 40px;
+  }
+  .btn.magenta {
+    background-color: #ae1f64;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn.magenta:hover {
+    background-color: #951650; /* slightly darker */
+    transform: scale(1.03); /* slight zoom */
+  }
+  
+  .medlemsfordel-card {
+    transition: transform 0.3s ease;
+  }
+  
+  .medlemsfordel-card:hover {
+    transform: scale(1.03);  /* Slight grow effect */
+  }
+
+  /* Footer */
+
+  .site-footer {
+    background-color: #f3e7f2;
+    padding: 60px 40px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .footer-col.newsletter h4 {
+    font-size: 1.5rem;  
+    color: #ae1f64;
+    margin-bottom: 10px;
+  }
+  .footer-col.newsletter {
+    text-align: center;
+  }
+  
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .footer-col.contact {
+    margin-left: auto; /* push to far right */
+    text-align: right;
+  }
+
+  .footer-col {
+    flex: 1 1 250px;
+    color: #000;
+  }
+  
+  .footer-col h4 {
+    color: #ae1f64;
+    margin-bottom: 10px;
+  }
+  
+  .footer-col p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  .footer-col img {
+    max-width: 180px;
+    margin-bottom: 15px;
+  }
+  
+  .social ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social li {
+    margin-bottom: 12px;
+  }
+  
+  .social a {
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+  
+  .icon-square {
+    display: inline-block;
+    background-color: #ae1f64;
+    color: white;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    font-size: 1rem;
+    border-radius: 0;
+  }
+  
+  .pink {
+    color: #ae1f64;
+    font-weight: 600;
+  }
+  
+
+  @media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+      }
+    .main-header-inner {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+    
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fffdf5;
+        padding: 20px;
+        border-top: 1px solid #eee;
+      }
+    
+      .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+    
+      .main-nav.show {
+        display: flex;
+      }
+    
+      .mobile-menu-toggle {
+        display: block;
+        margin-left: auto;
+        padding: 10px;
+      }
+    
+      .header-actions {
+        display: none; /* hide buttons on mobile */
+      }
+
+    .about-container {
+      flex-direction: column;
+      position: static;
+    }
+  
+    .about-text {
+      position: static;
+      transform: none;
+      max-width: 100%;
+      margin-top: 20px;
+      padding: 30px 20px;
+    }
+  
+    .about-image img {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+    
+      .card {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 1 / 1; /* Keeps it square-ish even on narrow screens */
+      }
+      .about-section,
+  .action-cards {
+    padding: 40px 20px;
+  }
+  
+  .actor-container {
+    flex-direction: column;
+    position: static;
+  }
+
+  .actor-text {
+    position: static;
+    transform: none;
+    max-width: 100%;
+    margin-top: 20px;
+    padding: 30px 20px;
+  }
+
+  .actor-image img {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0px;
+
+  }
+
+  .footer-col {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 10px;
+  }
+
+  .footer-col.contact {
+    text-align: center;
+    margin-left: 0;
+  }
+  .footer-col.social {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .footer-col.contact img {
+    margin: 0 auto 15px;
+  }
+
+  .footer-col.social ul {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+
+  .footer-col.social li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-col.social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .footer-col.newsletter {
+    margin-top: 10px; 
+    margin-bottom: 40px;
+  }
+
+  .footer-col.newsletter h4 {
+    margin-top: 0;
+  }
+  }
+
+  /* Behandlinger */ 
+
+  
+  .treatment-page h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    color: #000;
+  }
+  
+  #category-select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #536c59;
+    color: #fff;
+    border: none;
+  }
+  
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .treatment-grid div {
+    background-color: #f3e7f2;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .treatment-grid div:hover {
+    transform: translateY(-5px);
+  }
+  
+  .treatment-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    padding-bottom: 20px;
+  }
+  
+  .treatment-grid h3 {
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.2rem;
+    color: #ae1f64;
+    margin: 15px 15px 10px;
+  }
+  
+  .treatment-grid p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    padding: 0 15px 20px;
+    color: #333;
+  }
+  .history-section {
+    padding: 80px 0;
+    background-color: #536D59;
+  }
+  
+  .history-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .history-image {
+    flex: 1 1 30%;
+    z-index: 1;
+  }
+  
+  .history-image img {
+    width: 80%;
+    height: auto;
+    margin-left: 200px;
+  }
+  
+  .history-text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #E8F4E7;
+    padding: 40px;
+    max-width: 420px;
+    font-family: 'Inter', sans-serif;
+    color: #443f42;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  
+  .history-text h2 {
+    font-family:  'Avenir', sans-serif;
+    font-size: 1.8rem;
+    color: #536D59;
+    margin-bottom: 20px;
+  }
+  
+  .history-text .btn.magenta {
+    background-color: #ae1f64;
+    color: #fff;
+    padding: 12px 20px;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .history-image {
+    opacity: 0;
+    will-change: opacity, transform;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .history-section.animate .history-image {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }  
+  .newsletter-signup {
+    background-color: #E8F4E7;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .newsletter-signup h2 {
+    color: #ae1f64;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .newsletter-signup p {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    color: #443f42;
+  }
+  
+
+  /* --- Video Section --- */
+.video-section {
+    background-color: #f3e7f2;
+    padding: 30px 0;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .video-section video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* --- Patienthistorier page --- */
+  .patient-page {
+    background-color: #FFFDF5;
+    padding: 60px 20px;
+  }
+  
+  .patient-page h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    color: #ae1f64;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .filter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  
+  .filter-row h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ae1f64;
+  }
+  
+  .dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .dropdown-container label {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .dropdown-container select {
+    padding: 10px 16px;
+    background-color: #536c59;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 2px;
+    appearance: none;
+  }
+
+  
+  
+  /* --- Story grid --- */
+  .story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .story-card {
+    background-color: #f3e7f2;
+    transition: transform 0.3s ease;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  }
+  .story-card-content {
+    flex-grow: 1;
+  }
+
+  .story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+  
+  .story-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .story-card h3 {
+    font-family: 'Avenir', sans-serif;
+    color: #ae1f64;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .story-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .btn-wrapper {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  .patient-section {
+    padding: 80px 0;
+    background-color: #536D59;
+  }
+  
+  .patient-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .patient-image {
+    flex: 1 1 30%;
+    z-index: 1;
+  }
+  
+  .patient-image img {
+    width: 80%;
+    height: auto;
+    margin-left: 200px;
+  }
+  
+  .patient-text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #E8F4E7;
+    padding: 40px;
+    max-width: 420px;
+    font-family: 'Inter', sans-serif;
+    color: #443f42;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  
+  .patient-text h2 {
+    font-family:  'Avenir', sans-serif;
+    font-size: 1.8rem;
+    color: #536D59;
+    margin-bottom: 20px;
+  }
+  
+  .patient-text .btn.magenta {
+    background-color: #ae1f64;
+    color: #fff;
+    padding: 12px 20px;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .patient-image {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .patient-section.animate .patient-image {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+ /* Share story */
+  .share-story {
+    background-color: #fffdf5;
+    padding: 20px 20px;
+  }
+  
+  .share-story .container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .share-story h2 {
+    color: #ae1f64;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .share-story p {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  .form-info-section {
+    background-color: #f3e7f2;
+    padding: 50px 20px;
+    text-align: left;
+  }
+  
+  .form-info-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+  
+  .form-info-section h3 {
+    font-size: 1.8rem;
+    color: #ae1f64;
+    margin-bottom: 15px;
+  }
+  
+  .form-info-section p {
+    font-size: 1.3rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  /* Video section */
+  .video-library {
+    padding: 60px 20px;
+  }
+  
+  .video-library .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .video-library h2 {
+    font-size: 1.8rem;
+    color: #ae1f64;
+    margin-bottom: 10px;
+  }
+  
+  .video-library p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .video-grid iframe {
+    width: 100%;
+    height: 300px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-item p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* --- WPForms styling --- */
+  .wpforms-form input[type="text"],
+  .wpforms-form input[type="email"],
+  .wpforms-form textarea,
+  .wpforms-form select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .wpforms-form .wpforms-submit {
+    background-color: #ae1f64;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .wpforms-form .wpforms-submit:hover {
+    background-color: #8b184f;
+  }
+
+  /* Konventionel behandling */
+  .komplementaer-page {
+    background-color: #FFFDF5;
+    padding: 60px 20px;
+  }
+  
+  .komplementaer-page h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    color: #ae1f64;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  /* Komplementaer behandling */
+  .konventionel-page {
+    background-color: #FFFDF5;
+    padding: 60px 20px;
+  }
+  
+  .konventionel-page h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    color: #ae1f64;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  /* Udlandet behandling */
+  .udlandet-page {
+    background-color: #FFFDF5;
+    padding: 60px 20px;
+  }
+  
+  .udlandet-page h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    color: #ae1f64;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  /* Kommende arrangementer */
+  .kommende-page {
+    background-color: #FFFDF5;
+    padding: 60px 20px;
+  }
+  
+  .kommende-page h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    color: #ae1f64;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .form-nyheder-section .btn.magentaN {
+    background-color: #ae1f64;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  /* Tidligere arrangementer */
+  .tidligere-page {
+    background-color: #FFFDF5;
+    padding: 60px 20px;
+  }
+  
+  .tidligere-page h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    color: #ae1f64;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  /* Bliv friviligt */
+  .volunteer-section {
+    padding: 80px 0;
+    background-color: #b45c87;
+  }
+  
+  .volunteer-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .volunteer-image {
+    flex: 1 1 30%;
+    z-index: 1;
+  }
+  
+  .volunteer-image img {
+    width: 80%;
+    height: auto;
+    margin-left: 200px;
+  }
+  
+  .volunteer-text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f3e7f2;
+    padding: 40px;
+    max-width: 420px;
+    font-family: 'Inter', sans-serif;
+    color: #443f42;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  
+  .volunteer-text h2 {
+    font-family:  'Avenir', sans-serif;
+    font-size: 1.8rem;
+    color: #ae1f64;
+    margin-bottom: 20px;
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  .form-volunteer-section {
+    background-color: #f3e7f2;
+    padding: 50px 20px;
+    text-align: left;
+  }
+  
+  .form-volunteer-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+  
+  .form-volunteer-section h3 {
+    font-size: 1.8rem;
+    color: #ae1f64;
+    margin-bottom: 15px;
+  }
+  
+  .form-volunteer-section p {
+    font-size: 1.3rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  .volunteer-form {
+    background-color: #fffdf5;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .volunteer-form h2 {
+    color: #ae1f64;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .volunteer-form p {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Nyheder */
+  .ny-page h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    color: #000;
+  }
+  
+  #category-select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #536c59;
+    color: #fff;
+    border: none;
+  }
+  .news-search-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .news-search-form input[type="search"] {
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .news-search-form .btn.magenta {
+    padding: 12px 20px;
+    background-color: #ae1f64;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .news-search-form .btn.magenta:hover {
+    background-color: #8b184f;
+  }
+  
+  
+  .nyheder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .nyheder-grid div {
+    background-color: #f3e7f2;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .nyheder-grid div:hover {
+    transform: translateY(-5px);
+  }
+  
+  .nyheder-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    padding-bottom: 20px;
+  }
+  
+  .nyheder-grid h3 {
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.2rem;
+    color: #ae1f64;
+    margin: 15px 15px 10px;
+  }
+  
+  .nyheder-grid p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    padding: 0 15px 20px;
+    color: #333;
+  }
+  .nyhed-card {
+    background-color: #f3e7f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 20px; /* for spacing */
+  }
+  
+  .nyhed-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .nyhed-card h3 {
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.2rem;
+    color: #ae1f64;
+    margin: 15px 15px 10px;
+  }
+  
+  .nyhed-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    padding: 0 15px;
+    color: #333;
+    flex-grow: 1;
+  }
+  
+  .nyhed-card .btn-wrapper {
+    text-align: center;
+    margin-top: auto;
+    padding-top: 20px;
+  }
+  .load-more-section {
+    padding: 40px 20px;
+  }
+  
+  .load-more-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .load-more-wrapper {
+    text-align: center;
+  }
+  
+  .load-more-wrapper .btn.magenta {
+    background-color: #ae1f64;
+    color: white;
+    padding: 12px 24px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .load-more-wrapper .btn.magenta:hover {
+    background-color: #8b184f;
+  }
+  .form-nyheder-section {
+    background-color: #f3e7f2;
+    padding: 50px 20px;
+    text-align: left;
+  }
+  
+  .form-nyheder-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+  
+  .form-nyheder-section h3 {
+    font-size: 1.8rem;
+    color: #ae1f64;
+    margin-bottom: 15px;
+  }
+  
+  .form-nyheder-section p {
+    font-size: 1.3rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  .nyheder-form {
+    background-color: #fffdf5;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .nyheder-form h2 {
+    color: #ae1f64;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .nyheder-form p {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Contact page */
+  .contact-page h1 {
+    font-family: 'Avenir', sans-serif;
+    font-size: 2rem;
+    color: #ae1f64;
+    margin-bottom: 20px;
+  }
+  
+  .contact-page p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }  
+
+  /* Om os page */
+  .om-section {
+    padding: 80px 0;
+    background-color: #536D59;
+  }
+  
+  .om-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .om-image {
+    flex: 1 1 30%;
+    z-index: 1;
+  }
+  
+  .om-image img {
+    width: 80%;
+    height: auto;
+    margin-left: 200px;
+  }
+  
+  .om-text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #E8F4E7;
+    padding: 40px;
+    max-width: 420px;
+    font-family: 'Inter', sans-serif;
+    color: #443f42;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  
+  .om-text h2 {
+    font-family:  'Avenir', sans-serif;
+    font-size: 1.8rem;
+    color: #536D59;
+    margin-bottom: 20px;
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+  }  
+  .form-name-section {
+    background-color: #f3e7f2;
+    padding: 50px 20px;
+    text-align: left;
+  }
+  
+  .form-name-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+  
+  .form-name-section h3 {
+    font-size: 1.8rem;
+    color: #ae1f64;
+    margin-bottom: 15px;
+  }
+  
+  .form-name-section p {
+    font-size: 1.3rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  .more-facts-section {
+    padding: 80px 20px;
+    font-family: 'Inter', sans-serif;
+    color: #443f42;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+  
+  .more-facts-section.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .more-facts-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .more-facts-section h2 {
+    font-family: 'Avenir', sans-serif;
+    color: #ae1f64;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .facts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .facts-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .facts-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ae1f64;
+    font-weight: bold;
+  }
+  
+  
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .treatment-page h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+  
+    #category-select {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .treatment-grid {
+      grid-template-columns: 1fr;
+    }
+    .patient-container {
+        flex-direction: column;
+        position: static;
+      }
+    
+      .patient-text {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        margin-top: 20px;
+        padding: 30px 20px;
+      }
+    
+      .patient-image img {
+        width: 100%;
+        margin-left: 0;
+      }
+  
+      .card-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+      
+        .card {
+          width: 100%;
+          max-width: 300px;
+          height: auto;
+          aspect-ratio: 1 / 1; /* Keeps it square-ish even on narrow screens */
+        }
+        .patient-section,
+    .action-cards {
+      padding: 40px 20px;
+    }
+    .video-grid {
+        grid-template-columns: 1fr; /* 1 per row on small screens */
+      }
+    
+      .video-grid iframe {
+        height: 200px;
+      }
+      .history-container {
+        flex-direction: column;
+        position: static;
+      }
+    
+      .history-text {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        margin-top: 20px;
+        padding: 30px 20px;
+      }
+    
+      .history-image img {
+        width: 100%;
+        margin-left: 0;
+      }
+      .magazine-container {
+        flex-direction: column;
+        position: static;
+      }
+    
+      .magazine-text {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        margin-top: 20px;
+        padding: 30px 20px;
+      }
+    
+      .magazine-image img {
+        width: 100%;
+        margin-left: 0;
+      }
+      .volunteer-container {
+        flex-direction: column;
+        position: static;
+      }
+    
+      .volunteer-text {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        margin-top: 20px;
+        padding: 30px 20px;
+      }
+    
+      .volunteer-image img {
+        width: 100%;
+        margin-left: 0;
+      }
+  
+      .card-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+      
+        .card {
+          width: 100%;
+          max-width: 300px;
+          height: auto;
+          aspect-ratio: 1 / 1; /* Keeps it square-ish even on narrow screens */
+        }
+        .volunteer-section,
+    .action-cards {
+      padding: 40px 20px;
+    }
+    .om-container {
+      flex-direction: column;
+      position: static;
+    }
+  
+    .om-text {
+      position: static;
+      transform: none;
+      max-width: 100%;
+      margin-top: 20px;
+      padding: 30px 20px;
+    }
+  
+    .om-image img {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+
+  /* Webbutik styles */
+.webbutik-page {
+  padding: 60px 20px;
+  background-color: white;
+}
+.webbutik-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.webbutik-heading {
+  font-family: 'Avenir', sans-serif;
+  font-size: 2rem;
+  color: #ae1f64;
+  margin: 0;
+}
+
+.cart-button {
+  background-color: #ae1f64;
+  color: #fff;
+  padding: 12px 20px;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.cart-button:hover {
+  background-color: #8b184f;
+}
+
+.cart-button i {
+  margin-right: 8px;
+}
+
+.webbutik-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px;
+}
+
+.product-card {
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Consistent image box with aspect ratio */
+.product-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Text styles */
+.product-info h3 {
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.2rem;
+  color: #443f42;
+  margin: 10px 0;
+}
+
+.price {
+  font-family: 'Inter', sans-serif;
+  color: #536d59;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Buy button */
+.btn.magenta {
+  background-color: #ae1f64;
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .webbutik-grid {
+    grid-template-columns: 1fr; /* stack products */
+    gap: 20px;
+  }
+
+  .webbutik-grid .product {
+    padding: 20px;
+  }
+
+  .product img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
